@@ -13,8 +13,10 @@ class CategoryItem extends StatelessWidget {
   }) : super(key: key);
 
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('/Category-Meals-Screen',
-        arguments: {'id': id, 'title': title});
+    Navigator.of(ctx).pushNamed(
+      CategoryMealsScreen.routeName,
+      arguments: {'id': id, 'title': title},
+    );
   }
 
   @override
