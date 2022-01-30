@@ -4,6 +4,8 @@ import '../data/dummy_data.dart';
 
 class CategoryMealsScreen extends StatelessWidget {
   static const String routeName = '/Category-Meals-Screen';
+
+  const CategoryMealsScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final routeArgs =

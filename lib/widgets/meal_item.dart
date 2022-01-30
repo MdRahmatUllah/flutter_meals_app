@@ -76,10 +76,11 @@ class MealItem extends StatelessWidget {
                   child: Container(
                     width: 300,
                     color: Colors.black54,
-                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                     child: Text(
                       title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 26,
                         color: Colors.white,
                       ),
@@ -91,16 +92,16 @@ class MealItem extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.schedule,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 6,
                       ),
                       Text('$duration min'),
@@ -108,22 +109,22 @@ class MealItem extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.work,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 6,
                       ),
-                      Text('${complexityText}'),
+                      Text(complexityText),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.attach_money),
-                      SizedBox(
+                      const Icon(Icons.attach_money),
+                      const SizedBox(
                         width: 6,
                       ),
-                      Text('${affordabilityText}'),
+                      Text(affordabilityText),
                     ],
                   ),
                 ],
