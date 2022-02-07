@@ -1,10 +1,11 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import './widgets/category_screen.dart';
+import 'package:mealsapp/screens/category_screen.dart';
+import 'package:mealsapp/screens/details_screen.dart';
 import 'models/category.dart';
 import 'data/dummy_data.dart';
-import 'widgets/category_item_screen.dart';
+import 'screens/category_item_screen.dart';
 
 void main(List<String> args) {
   runApp(MainApp());
@@ -39,6 +40,17 @@ class MainApp extends StatelessWidget {
       routes: {
         '/': (ctx) => CategoryScreen(category: category),
         CategoryItems.routeName: (ctx) => CategoryItems(),
+        DetailsScreen.routeName: (ctx) => DetailsScreen(),
+      },
+      // if there is no route to go
+      onGenerateRoute: (settings) {
+        return MaterialPageRoute(
+            builder: (ctx) => CategoryScreen(category: category));
+      },
+      // if there is no route to go like 404 not fount
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+            builder: (ctx) => CategoryScreen(category: category));
       },
     );
   }

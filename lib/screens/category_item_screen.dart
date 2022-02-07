@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mealsapp/data/dummy_data.dart';
 import 'package:mealsapp/models/category.dart';
+import 'package:mealsapp/widgets/category_card.dart';
 
 class CategoryItems extends StatelessWidget {
   static const routeName = '/category-items';
@@ -20,7 +21,14 @@ class CategoryItems extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (ctx, index) {
-          return Text(meals[index].title);
+          return CategoryCard(
+            title: meals[index].title,
+            affordability: meals[index].affordability,
+            complexity: meals[index].complexity,
+            duration: meals[index].duration,
+            imageUrl: meals[index].imageUrl,
+            id: meals[index].id,
+          );
         },
         itemCount: meals.length,
       ),

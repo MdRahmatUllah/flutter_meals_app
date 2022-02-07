@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mealsapp/models/category.dart';
-
-import 'category_item_screen.dart';
+import 'package:mealsapp/screens/category_item_screen.dart';
 
 class CategoryItemCard extends StatelessWidget {
   Category category;
