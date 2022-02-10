@@ -19,8 +19,9 @@ class CategoryItemCard extends StatelessWidget {
       onTap: () => _selectedCategory(context),
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(15),
-      child: Container(
-        padding: EdgeInsets.all(15),
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 200),
+        padding: const EdgeInsets.all(15),
         child: Text(
           category.title,
           style: Theme.of(context).textTheme.headline6,
@@ -35,6 +36,14 @@ class CategoryItemCard extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
           borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey[500]!,
+              spreadRadius: 1,
+              blurRadius: 15,
+              offset: Offset(4, 4), // changes position of shadow
+            ),
+          ],
         ),
       ),
     );

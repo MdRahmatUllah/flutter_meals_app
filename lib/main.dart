@@ -3,9 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:mealsapp/screens/category_screen.dart';
 import 'package:mealsapp/screens/details_screen.dart';
+import 'package:mealsapp/screens/tabs_screen.dart';
 import 'models/category.dart';
 import 'data/dummy_data.dart';
 import 'screens/category_item_screen.dart';
+import 'screens/tabs_screen.dart';
 
 void main(List<String> args) {
   runApp(MainApp());
@@ -13,15 +15,14 @@ void main(List<String> args) {
 
 class MainApp extends StatelessWidget {
   const MainApp({Key? key}) : super(key: key);
-  final category = DUMMY_CATEGORIES;
-  @override
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.amber,
-        accentColor: Colors.pink,
-        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        primarySwatch: Colors.pink,
+        backgroundColor: Colors.grey[300],
+        primaryColor: Colors.grey[300],
+        canvasColor: Colors.grey[300],
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
             bodyText1: const TextStyle(
@@ -38,19 +39,19 @@ class MainApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (ctx) => CategoryScreen(category: category),
-        CategoryItems.routeName: (ctx) => CategoryItems(),
-        DetailsScreen.routeName: (ctx) => DetailsScreen(),
+        // '/': (ctx) => CategoryScreen(),
+        '/': (ctx) => TabsScreen(),
+
+        CategoryItems.routeName: (ctx) => const CategoryItems(),
+        DetailsScreen.routeName: (ctx) => const DetailsScreen(),
       },
       // if there is no route to go
       onGenerateRoute: (settings) {
-        return MaterialPageRoute(
-            builder: (ctx) => CategoryScreen(category: category));
+        return MaterialPageRoute(builder: (ctx) => CategoryScreen());
       },
       // if there is no route to go like 404 not fount
       onUnknownRoute: (settings) {
-        return MaterialPageRoute(
-            builder: (ctx) => CategoryScreen(category: category));
+        return MaterialPageRoute(builder: (ctx) => CategoryScreen());
       },
     );
   }
