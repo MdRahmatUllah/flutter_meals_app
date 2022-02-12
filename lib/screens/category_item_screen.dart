@@ -15,11 +15,6 @@ class CategoryItems extends StatefulWidget {
 }
 
 class _CategoryItemsState extends State<CategoryItems> {
-  late String categoryTitle;
-  late List<Meal> meals;
-  // late Map<String, List<String>> removedMealsId;
-  // late List<String> removedMealsId = [];
-
   void removeItem(String mealId) {
     print(mealId);
     setState(() {

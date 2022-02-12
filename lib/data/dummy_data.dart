@@ -57,7 +57,7 @@ const DUMMY_CATEGORIES = [
   ),
 ];
 late List<String> removedMealsId = [];
-
+late List<String> favoriteMealId = [];
 const List<Meal> DUMMY_MEALS = [
   Meal(
     id: 'm1',

@@ -1,9 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:mealsapp/data/dummy_data.dart';
 
-class DetailsScreen extends StatelessWidget {
+class DetailsScreen extends StatefulWidget {
   static const String routeName = "/details-screen";
   const DetailsScreen({Key? key}) : super(key: key);
+
+  @override
+  State<DetailsScreen> createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
+  late bool _isFavorite = false;
+
+  void _addFavorite(String mealId) {
+    setState(
+      () {
+        if (_isFavorite) {
+          favoriteMealId.remove(mealId);
+        } else {
+          favoriteMealId.add(mealId);
+        }
+        print(_isFavorite);
+        _isFavorite = !_isFavorite;
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +32,7 @@ class DetailsScreen extends StatelessWidget {
     var meal = DUMMY_MEALS.firstWhere((meals) {
       return meals.id == mealId;
     });
+    _isFavorite = favoriteMealId.contains(mealId);
     final pageHeight = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
         50;
@@ -19,6 +41,14 @@ class DetailsScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(meal.title),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.favorite,
+                  color: _isFavorite ? Colors.black : Colors.white),
+              onPressed: () => _addFavorite(meal.id),
+              padding: EdgeInsets.only(right: 30),
+            ),
+          ],
         ),
         body: Column(
           children: [
