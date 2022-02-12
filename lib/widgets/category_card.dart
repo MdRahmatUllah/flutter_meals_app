@@ -9,6 +9,7 @@ class CategoryCard extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
   final String id;
+  final Function removeItem;
 
   const CategoryCard({
     Key? key,
@@ -18,6 +19,7 @@ class CategoryCard extends StatelessWidget {
     required this.duration,
     required this.imageUrl,
     required this.id,
+    required this.removeItem,
   }) : super(key: key);
 
   String get complexityText {
@@ -47,7 +49,19 @@ class CategoryCard extends StatelessWidget {
   }
 
   void _selectMeal(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed(DetailsScreen.routeName, arguments: id);
+    Navigator.of(ctx)
+        .pushNamed(
+          DetailsScreen.routeName,
+          arguments: id,
+        )
+        .then(
+          (value) => {
+            if (value != null)
+              {
+                removeItem(value),
+              }
+          },
+        );
   }
 
   @override

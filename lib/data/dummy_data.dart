@@ -56,6 +56,7 @@ const DUMMY_CATEGORIES = [
     color: Colors.teal,
   ),
 ];
+late List<String> removedMealsId = [];
 
 const List<Meal> DUMMY_MEALS = [
   Meal(

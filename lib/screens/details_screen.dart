@@ -37,6 +37,12 @@ class DetailsScreen extends StatelessWidget {
             buildContainer(item: meal.steps, heightProperty: pageHeight * .25),
           ],
         ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.delete),
+          onPressed: () {
+            Navigator.of(context).pop(meal.id);
+          },
+        ),
       ),
     );
   }
