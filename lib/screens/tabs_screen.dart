@@ -33,19 +33,24 @@ class _TabsScreenState extends State<TabsScreen> {
   BottomNavigationBarItem buildBottomNavigationBar(
       BuildContext ctx, int index) {
     return BottomNavigationBarItem(
-      backgroundColor: Theme.of(ctx).primaryColor,
-      icon: Icon(index == 0 ? Icons.category : Icons.favorite),
-      title: Text(title[index]),
+      backgroundColor: Colors.pink,
+      icon: Icon(
+        index == 0 ? Icons.category : Icons.favorite,
+        color: Colors.white,
+      ),
+      title: Text(title[index], style: TextStyle(color: Colors.white)),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MainDrawer(callBack: _selectPage),
+      drawer: MainDrawer(),
       appBar: AppBar(
-        title: Text(title[_selectedIndex],
-            style: Theme.of(context).textTheme.headline6),
+        title: Text(
+          title[_selectedIndex],
+          style: Theme.of(context).textTheme.headline6,
+        ),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: _screens[_selectedIndex],
