@@ -4,7 +4,20 @@ A new Flutter project.
 
 ## Getting Started
 # Category Page
-![alt text](https://github.com/MdRahmatUllah/flutter_meals_app/blob/main/preview_images/Screenshot_20220220-143028.jpg?raw=true)
+![alt text](https://github.com/MdRahmatUllah/flutter_meals_app/blob/main/preview_images/Screenshot_20220220-143028.jpg?raw=true height= "500")
+
+# Category Item Page
+![alt text](https://github.com/MdRahmatUllah/flutter_meals_app/blob/main/preview_images/Screenshot_20220220-143033.jpg?raw=true)
+
+# Meal Details Page
+![alt text](https://github.com/MdRahmatUllah/flutter_meals_app/blob/main/preview_images/Screenshot_20220220-143042.jpg?raw=true)
+
+# Side Menu
+![alt text](https://github.com/MdRahmatUllah/flutter_meals_app/blob/main/preview_images/Screenshot_20220220-143049.jpg?raw=true)
+
+# Favorite Page
+![alt text](https://github.com/MdRahmatUllah/flutter_meals_app/blob/main/preview_images/Screenshot_20220220-143107.jpg?raw=true)
+
 
 This project is a starting point for a Flutter application.
 
