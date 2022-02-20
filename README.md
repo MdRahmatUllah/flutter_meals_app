@@ -3,6 +3,8 @@
 A new Flutter project.
 
 ## Getting Started
+# Category Page
+![alt text](https://github.com/MdRahmatUllah/flutter_meals_app/blob/main/preview_images/Screenshot_20220220-143028.jpg?raw=true)
 
 This project is a starting point for a Flutter application.
 
